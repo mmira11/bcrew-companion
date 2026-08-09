@@ -206,3 +206,21 @@ actual roster and his opponents' — published to a public URL. Decide then
 whether that is acceptable, or whether the site should move to a private repo
 with Pages (needs GitHub Pro) or to a host with access control. **Never commit
 the Yahoo cookie or any raw authenticated response**, regardless.
+
+### Why the workflow file lives in `docs/`
+
+`docs/weekly-update.yml.planned` belongs at `.github/workflows/weekly-update.yml`.
+It is parked because the `gh` OAuth token lacks the `workflow` scope, and GitHub
+refuses pushes that create workflow files without it. Granting the scope needs an
+interactive browser confirmation:
+
+```bash
+gh auth refresh -s workflow          # opens a browser, Miguel approves
+mkdir -p .github/workflows
+git mv docs/weekly-update.yml.planned .github/workflows/weekly-update.yml
+git commit -am "Restore weekly workflow now that workflow scope is granted"
+git push
+```
+
+No urgency: the workflow is inert by construction (nothing real to regenerate
+until after the Aug 23 draft), so the site deploys and works without it.
