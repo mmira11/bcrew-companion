@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "season": 2026,
+    "week": 1,
+    "generated": "2026-08-09T12:00:00",
+    "source": "MOCK placeholder — real data impossible until roster exists (post Aug 23) and matchups exist (Week 1, Sep 9)"
+  },
+  "matchup": {
+    "me": { "name": "Team Miguel", "record": "0-0" },
+    "opponent": { "name": "Mock Opponent", "record": "0-0" }
+  },
+  "lineups": {
+    "me": [
+      { "slot": "QB", "player": { "name": "Joe Burrow", "nfl_team": "CIN", "position": "QB", "bye_week": 10, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs CLE", "matchup": { "label": "favorable", "basis": "CLE allowed 6th-most pts to QBs (MOCK)" } },
+      { "slot": "RB", "player": { "name": "Jahmyr Gibbs", "nfl_team": "DET", "position": "RB", "bye_week": 6, "injury": { "status": "Q", "detail": "Back", "severe": false } }, "on_bye": false, "opp_game": "@ GB", "matchup": { "label": "neutral", "basis": "GB mid-pack vs RBs (MOCK)" } },
+      { "slot": "RB", "player": { "name": "Bucky Irving", "nfl_team": "TB", "position": "RB", "bye_week": 9, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs ATL", "matchup": { "label": "tough", "basis": "ATL 3rd-fewest pts allowed to RBs (MOCK)" } },
+      { "slot": "WR", "player": { "name": "Puka Nacua", "nfl_team": "LAR", "position": "WR", "bye_week": 8, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs HOU", "matchup": { "label": "neutral", "basis": "HOU mid-pack vs WRs (MOCK)" } },
+      { "slot": "WR", "player": { "name": "Jameson Williams", "nfl_team": "DET", "position": "WR", "bye_week": 6, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ GB", "matchup": { "label": "favorable", "basis": "GB bottom-5 vs deep WRs (MOCK)" } },
+      { "slot": "TE", "player": { "name": "Harold Fannin", "nfl_team": "CLE", "position": "TE", "bye_week": 7, "injury": { "status": "Q", "detail": "Undisclosed", "severe": false } }, "on_bye": false, "opp_game": "@ CIN", "matchup": { "label": "no-data", "basis": "insufficient sample this early (MOCK)" } },
+      { "slot": "FLEX", "player": { "name": "Courtland Sutton", "nfl_team": "DEN", "position": "WR", "bye_week": 12, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs LV", "matchup": { "label": "favorable", "basis": "LV bottom-3 vs WRs (MOCK)" } },
+      { "slot": "K", "player": { "name": "Brandon Aubrey", "nfl_team": "DAL", "position": "K", "bye_week": 11, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ PHI", "matchup": { "label": "neutral", "basis": "dome-adjacent, no wind flag (MOCK)" } },
+      { "slot": "DEF", "player": { "name": "Texans", "nfl_team": "HOU", "position": "DEF", "bye_week": 13, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ LAR", "matchup": { "label": "tough", "basis": "LAR top-5 offense at home (MOCK)" } },
+      { "slot": "BN", "player": { "name": "Jakobi Meyers", "nfl_team": "JAC", "position": "WR", "bye_week": 14, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs CAR", "matchup": { "label": "no-data", "basis": "" } },
+      { "slot": "BN", "player": { "name": "Kyle Pitts", "nfl_team": "ATL", "position": "TE", "bye_week": 5, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ TB", "matchup": { "label": "no-data", "basis": "" } },
+      { "slot": "BN", "player": { "name": "Malik Nabers", "nfl_team": "NYG", "position": "WR", "bye_week": 14, "injury": { "status": "Q", "detail": "Knee - ACL", "severe": true } }, "on_bye": false, "opp_game": "vs WAS", "matchup": { "label": "no-data", "basis": "" } }
+    ],
+    "opponent": [
+      { "slot": "QB", "player": { "name": "Josh Allen", "nfl_team": "BUF", "position": "QB", "bye_week": 7, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs NYJ", "matchup": { "label": "favorable", "basis": "NYJ bottom-10 vs QBs (MOCK)" } },
+      { "slot": "RB", "player": { "name": "Bijan Robinson", "nfl_team": "ATL", "position": "RB", "bye_week": 5, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ TB", "matchup": { "label": "neutral", "basis": "TB mid-pack vs RBs (MOCK)" } },
+      { "slot": "RB", "player": { "name": "James Cook", "nfl_team": "BUF", "position": "RB", "bye_week": 7, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs NYJ", "matchup": { "label": "tough", "basis": "NYJ top-5 run defense (MOCK)" } },
+      { "slot": "WR", "player": { "name": "Ja'Marr Chase", "nfl_team": "CIN", "position": "WR", "bye_week": 10, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs CLE", "matchup": { "label": "favorable", "basis": "CLE thin at CB2 (MOCK)" } },
+      { "slot": "WR", "player": { "name": "Tee Higgins", "nfl_team": "CIN", "position": "WR", "bye_week": 10, "injury": { "status": "Q", "detail": "Hamstring", "severe": false } }, "on_bye": false, "opp_game": "vs CLE", "matchup": { "label": "neutral", "basis": "" } },
+      { "slot": "TE", "player": { "name": "Trey McBride", "nfl_team": "ARI", "position": "TE", "bye_week": 8, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs SEA", "matchup": { "label": "neutral", "basis": "SEA mid-pack vs TEs (MOCK)" } },
+      { "slot": "FLEX", "player": { "name": "Chase Brown", "nfl_team": "CIN", "position": "RB", "bye_week": 10, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs CLE", "matchup": { "label": "favorable", "basis": "CLE bottom-5 vs receiving RBs (MOCK)" } },
+      { "slot": "K", "player": { "name": "Jake Bates", "nfl_team": "DET", "position": "K", "bye_week": 6, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ GB", "matchup": { "label": "neutral", "basis": "" } },
+      { "slot": "DEF", "player": { "name": "Broncos", "nfl_team": "DEN", "position": "DEF", "bye_week": 12, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "vs LV", "matchup": { "label": "favorable", "basis": "LV bottom-5 scoring offense (MOCK)" } },
+      { "slot": "BN", "player": { "name": "Jared Goff", "nfl_team": "DET", "position": "QB", "bye_week": 6, "injury": { "status": "", "detail": "", "severe": false } }, "on_bye": false, "opp_game": "@ GB", "matchup": { "label": "no-data", "basis": "" } }
+    ]
+  }
+}
