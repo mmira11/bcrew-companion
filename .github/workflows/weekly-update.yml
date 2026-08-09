@@ -1,0 +1,35 @@
+# SKELETON — intentionally inert today, for two reasons:
+#   1. This repo has no GitHub remote yet; Actions cannot exist until it is
+#      pushed (creating the GitHub repo is Miguel's call, not automated).
+#   2. There is no real data to regenerate: Miguel's roster does not exist
+#      until the Aug 23 draft, and matchups do not exist until Week 1 (Sep 9).
+# The cron target is Tuesday morning — after Monday Night Football settles,
+# before waiver decisions.
+name: weekly-matchup-refresh
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 10 * * 2" # Tuesdays 10:00 UTC = 6am ET during the season
+jobs:
+  regenerate-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate week data (PLACEHOLDER)
+        run: |
+          echo "TODO(post-draft): fetch Yahoo roster + scoreboard via the"
+          echo "  documented endpoint family in README.md (cookie captured"
+          echo "  manually, never committed)."
+          echo "TODO: merge Sleeper player-metadata supplement (injury_status,"
+          echo "  depth_chart_order) per README.md."
+          echo "Until then public/data/week.json ships as-is (MOCK)."
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run build
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
