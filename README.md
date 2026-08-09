@@ -125,8 +125,26 @@ currency is verifiable from outside, not their cadence.
 
 Cross-check against players the bcrew pipeline flagged: Sleeper shows
 Pearsall IR, Pierce PUP, Kittle PUP, Nabers Q, Kraft Q — agreeing with the
-Yahoo statuses, and notably **disagreeing with the earlier web report that
-Pearsall had been activated**. Fresher than FFA's one-shot export either way.
+Yahoo statuses. Fresher than FFA's one-shot export either way.
+
+### Injury status ages fast — re-verify it close to when it matters
+
+**Open conflict, unresolved:** a red-team web search weeks ago reported Ricky
+Pearsall **activated off PUP**; Sleeper's live data on 2026-08-09 still lists
+him **IR**, matching Yahoo. Both cannot be current. Immaterial today — he is
+not on any roster of Miguel's, since no roster exists — but it is a standing
+warning, not a one-off discrepancy:
+
+- A status claim is only true as of the moment it was fetched. Anything
+  captured during research is stale by draft night, and very stale by Week 6.
+- Treat a written injury note in this repo, in bcrew's CLAUDE.md, or in a
+  commit message as a **timestamp with an opinion attached**, never as fact.
+- Re-pull `injury_status` at the moment a decision depends on it — before the
+  draft, and every Tuesday during the season — and prefer sources carrying
+  their own freshness stamp (`news_updated`) over ones that do not.
+- When two sources disagree, record the conflict rather than picking a winner.
+  The FFA export has no timestamp at all, which is precisely why it loses to
+  Sleeper for status even though it wins for projections.
 
 **Role: SUPPLEMENT only.** Sleeper's league/roster/matchup endpoints work
 solely for leagues hosted on Sleeper. This league lives on Yahoo — Sleeper
@@ -143,3 +161,48 @@ npm install
 npm run dev        # local preview with the MOCK week.json
 npm run deploy     # gh-pages, once a remote exists
 ```
+
+## Deployment status — LOCAL ONLY as of 2026-08-09
+
+Verified, not assumed:
+
+| Check | Result |
+|---|---|
+| git remote on this repo | **none** — `git init` only, never pushed |
+| `github.com/mmira11/bcrew-companion` | **HTTP 404** — repo does not exist |
+| `mmira11.github.io/bcrew-companion/` | **HTTP 404** — nothing published |
+| `mmira11.github.io/tanda-manager/` | HTTP 200 — the pattern works, just unused here |
+| `gh` CLI | installed, authenticated as `mmira11` |
+
+So the phone-check goal is **not yet met**. `npm run dev` is a localhost
+preview only; it is unreachable from a phone.
+
+### To go live (matching tanda-manager)
+
+`homepage` in package.json and `base` in vite.config.js are already set to
+`/bcrew-companion/`, and `gh-pages` is already a devDependency. What remains:
+
+```bash
+cd ~/Desktop/projects/bcrew-companion
+gh repo create bcrew-companion --public --source=. --remote=origin --push
+npm run deploy          # runs build, pushes dist/ to the gh-pages branch
+gh api -X POST repos/mmira11/bcrew-companion/pages \
+  -f 'source[branch]=gh-pages' -f 'source[path]=/'   # enable Pages once
+```
+
+Then `https://mmira11.github.io/bcrew-companion/` — usually live within a
+minute or two of the first Pages build.
+
+**Repo must be public** for GitHub Pages on a free account. That is the reason
+this has not been run automatically: it publishes to the open internet under
+Miguel's account, and it is his call, not an implementation detail. Nothing in
+this repo is sensitive today (all data is mock, no cookies, no tokens), but
+that changes the moment real roster data lands — see the note below.
+
+### Before real data goes live
+
+Once the Yahoo pull is wired up, `public/data/week.json` will contain Miguel's
+actual roster and his opponents' — published to a public URL. Decide then
+whether that is acceptable, or whether the site should move to a private repo
+with Pages (needs GitHub Pro) or to a host with access control. **Never commit
+the Yahoo cookie or any raw authenticated response**, regardless.

@@ -68,10 +68,17 @@ function Lineup({ team, entries, mine }) {
         <SlotRow key={e.slot + e.player.name} e={e} />
       ))}
       {bench.length > 0 && (
-        <div className="border-t border-slate-800 px-4 py-2.5 text-xs text-slate-500">
-          <span className="font-mono uppercase tracking-wide">Bench · </span>
-          {bench.map((e) => e.player.name).join(" · ")}
-        </div>
+        <>
+          {/* Bench rows render through the SAME SlotRow as starters. The point
+              of this dashboard is comparing a hurt starter against a healthy
+              bench option — a bench that hides injury status defeats it. */}
+          <div className="border-t border-slate-800 bg-slate-950/60 px-4 py-1.5 font-mono text-[11px] uppercase tracking-wide text-slate-500">
+            Bench
+          </div>
+          {bench.map((e) => (
+            <SlotRow key={"BN" + e.player.name} e={e} />
+          ))}
+        </>
       )}
     </section>
   );
