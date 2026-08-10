@@ -18,7 +18,10 @@ function SlotRow({ e }) {
         {e.slot}
       </span>
       <div className="min-w-0 flex-1">
-        <div className="flex items-baseline gap-2">
+        {/* Wraps so position/team and injury drop below the name when the row
+            is too narrow (320px), instead of squeezing the name into an
+            ellipsis. The name keeps truncate as a backstop for long names. */}
+        <div className="flex flex-wrap items-baseline gap-2">
           <span className="truncate font-medium text-slate-100">{p.name}</span>
           <span className="text-xs text-sky-300/70">
             {p.position} · {p.nfl_team}
@@ -35,7 +38,9 @@ function SlotRow({ e }) {
             <span className="text-xs font-semibold text-rose-400">BYE</span>
           )}
         </div>
-        <div className="truncate text-xs text-slate-500">
+        {/* The basis is the justification for the label — truncating it defeats
+            the point of showing it, so it wraps rather than clipping. */}
+        <div className="text-xs text-slate-500">
           {e.opp_game}
           {e.matchup.basis ? ` — ${e.matchup.basis}` : ""}
         </div>
