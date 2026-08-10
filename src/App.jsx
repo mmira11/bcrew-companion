@@ -13,7 +13,7 @@ const CHIP = {
 function SlotRow({ e }) {
   const p = e.player;
   return (
-    <div className="flex items-center gap-3 px-4 py-2.5 border-b border-slate-800/70 last:border-0">
+    <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 px-4 py-2.5 border-b border-slate-800/70 last:border-0">
       <span className="w-11 shrink-0 font-mono text-[11px] uppercase tracking-wide text-slate-500">
         {e.slot}
       </span>
@@ -40,13 +40,18 @@ function SlotRow({ e }) {
           {e.matchup.basis ? ` — ${e.matchup.basis}` : ""}
         </div>
       </div>
-      <span
-        className={`shrink-0 rounded-full border px-2.5 py-0.5 text-xs font-medium ${
-          CHIP[e.matchup.label] ?? CHIP["no-data"]
-        }`}
-      >
-        {e.matchup.label}
-      </span>
+      {/* Below sm the chip drops to its own line — w-full forces the wrap — so
+          the name gets the full row width instead of competing with it at
+          375px. pl-14 matches the slot column (w-11) plus gap-x-3. */}
+      <div className="w-full pl-14 sm:w-auto sm:shrink-0 sm:pl-0">
+        <span
+          className={`inline-block rounded-full border px-2.5 py-0.5 text-xs font-medium ${
+            CHIP[e.matchup.label] ?? CHIP["no-data"]
+          }`}
+        >
+          {e.matchup.label}
+        </span>
+      </div>
     </div>
   );
 }

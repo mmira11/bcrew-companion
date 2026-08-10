@@ -14,6 +14,34 @@ purpose: the board's lifecycle is one night; this app's is weekly for four
 months. Stack matches the Tanda Manager pattern: Vite + React 18 + Tailwind,
 deployed to GitHub Pages via `gh-pages -d dist`.
 
+---
+
+> ## 🛑 STOP — do not wire real data into `week.json`
+>
+> **This is a blocking decision, and it is Miguel's alone. It is not an
+> implementation detail and must not be resolved by whoever picks this up.**
+>
+> This repo is **public**. The moment `public/data/week.json` holds real data,
+> it publishes Miguel's actual roster *and his league opponents' rosters and
+> matchup analysis* to the open internet, under his name, about people who
+> never agreed to be analyzed in public.
+>
+> Miguel must first choose one of:
+>
+> | Option | Cost |
+> |---|---|
+> | Stay fully public with real rosters | free; exposes opponents |
+> | Move to a **private repo** with Pages | needs **GitHub Pro** (paid) |
+> | Stay public but **anonymize opponent display** | free; loses opponent names |
+>
+> **Until he answers, the MOCK banner stays and the Yahoo pull stays unwired —
+> even after the Aug 23 draft makes real data technically available.** "The
+> draft happened" is not the unblocking condition. His answer is.
+>
+> Raised and still unanswered as of **2026-08-09**.
+
+---
+
 ## Status (2026-08-09)
 
 Layout scaffold with MOCK data only. Real data is **impossible** right now,
@@ -202,10 +230,12 @@ that changes the moment real roster data lands — see the note below.
 ### Before real data goes live
 
 Once the Yahoo pull is wired up, `public/data/week.json` will contain Miguel's
-actual roster and his opponents' — published to a public URL. Decide then
-whether that is acceptable, or whether the site should move to a private repo
-with Pages (needs GitHub Pro) or to a host with access control. **Never commit
-the Yahoo cookie or any raw authenticated response**, regardless.
+actual roster and his opponents' — published to a public URL. **This is the
+blocking decision described in the STOP notice at the top of this file: it is
+unanswered, and wiring real data before Miguel answers it is not permitted,
+draft or no draft.** The options are stay public, move to a private repo with
+Pages (needs GitHub Pro), or anonymize opponent display. **Never commit the
+Yahoo cookie or any raw authenticated response**, regardless.
 
 ### Why the workflow file lives in `docs/`
 
